@@ -3,6 +3,7 @@
         <%@ page import = "java.sql.*"%>
 <%@ page import = "Connector.Connector"%>
     <%
+    try{
     Cookie[] c =request.getCookies();
     String logged="false";
     String email;
@@ -31,8 +32,7 @@
             ResultSet rs2 = st.executeQuery("select * from product_registration");
            	while(rs2.next()){%>	
 			<option value="<%=rs2.getString("product_name")%>">
-           	<%}
-            %>
+           	<%}%>
             </datalist>
             </form>
         </div>
@@ -189,7 +189,7 @@ while (rs.next()){
                             <p class="discount">$&nbsp;<%=rs.getString("product_price")%>.00</p>
                         </div>
                     </a>
-                    <a href="./actionforcart.jsp?product_name=<%=rs.getString("product_name")%>&function=new"><button>ADD TO BASKET</button></a>
+                    <a href="./actionforcart.jsp?product_name=<%=rs.getString("product_name")%>&function=new&type=index"><button>ADD TO BASKET</button></a>
                 </div>
             </div>
 			<%} i++;}%>
@@ -240,6 +240,9 @@ while (rs.next()){
 catch(Exception e){
 	out.println(e);
 }
+    }catch(Exception e){
+    	out.println(e);
+    }
 %>
 </div>
 </body>

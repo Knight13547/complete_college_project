@@ -24,8 +24,8 @@ String type=request.getParameter("type");
     <header>
         <div class="left_header">
             <a href="./index.jsp"><div class="img1"></div></a>
-            <form action="">
-            <input type="text" name=""  list="search" placeholder="      Search for product">
+            <form action="./actionforsearch.jsp">
+            <input type="text" name="search"  list="search" placeholder="      Search for product">
             <datalist id = "search" style="display:none;">
 			<% rs = st.executeQuery("select * from product_registration;"); 
 				while(rs.next()){%>
@@ -137,7 +137,7 @@ while (rs.next()){
                             <p class="discount">$&nbsp;<%=rs.getString("product_price")%>.00</p>
                         </div>
                     </a>
-                    <a href="./actionforcart.jsp?product_name=<%=rs.getString("product_name")%>&function=new"><button>ADD TO BASKET</button></a>
+                    <a href="./actionforcart.jsp?product_name=<%=rs.getString("product_name")%>&function=new&type=<%= type%>"><button>ADD TO BASKET</button></a>
                 </div>
             </div>
 			<%}}

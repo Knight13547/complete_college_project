@@ -12,10 +12,11 @@
 </head>
 <body>
 <%
-ResultSet rs = null;
-String email=request.getParameter("email");
-String pass= request.getParameter("pass");
+
 try{
+	ResultSet rs = null;
+	String email=request.getParameter("email");
+	String pass= request.getParameter("pass");
 	Connector db = new Connector();
 Connection con =Connector.conn();
 Statement st = con.createStatement();

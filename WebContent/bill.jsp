@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ page import="java.text.SimpleDateFormat"%>  
+<%@ page import="java.text.SimpleDateFormat"%>  
 <%@ page import="java.util.Date"%>
-    <%@ page import = "Connector.Connector"%> 
-    <%@ page import = "java.sql.*"%>
+<%@ page import = "Connector.Connector"%> 
+<%@ page import = "java.sql.*"%>
   <%  
-//   try{
+  try{
 	  Cookie[] c =request.getCookies();
 	    String logged="false";
 	    String email;
@@ -22,7 +22,6 @@
 	Connector db = new Connector();
 	Connection con =Connector.conn();
 	Statement st = con.createStatement();
-
 	%>
 
 <!DOCTYPE html>
@@ -125,7 +124,7 @@ if(logged.equals("true") || c[0].getValue()!=null){%>
     </div>
     <hr style="height: 4px; background-color: black;margin: 0;">
     </div>
-    <% rs = st.executeQuery("select * from cart");
+    <% rs = st.executeQuery("select * from cart where email = '"+email+"'");
     int final_amount=0;
    	while(rs.next()){%>
     <div class="bill_components">
@@ -163,10 +162,10 @@ if(logged.equals("true") || c[0].getValue()!=null){%>
 }catch(Exception e){
 	out.println	("jiii");
 }   
-// }
-//    	catch(Exception e){
-//    	out.println(e);	
-//    	}
+}
+   	catch(Exception e){
+   	out.println(e);	
+   	}
    	
 
 %>

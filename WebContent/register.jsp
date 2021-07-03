@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
                 <%@ page import = "java.sql.*"%>
 <%@ page import = "Connector.Connector"%>
-<%
+<%try{
 Cookie c[]=request.getCookies();
 	 ResultSet rs;
 Connector db = new Connector();
@@ -98,4 +98,5 @@ out.println(overall_quantity);
     <a href="./login.jsp" class="bt1" style="background-color:#788402;color:white; border:1px solid gray; text-align: center; display:flex; align-items: center;justify-content: center;"> Login</a>
 </form>
 </body>
+<%}catch(Exception e){out.println(e);}%>
 </html>

@@ -3,7 +3,7 @@
        <%@ page import = "Connector.Connector"%> 
     <%@ page import = "java.sql.*"%>
   <% 
-//   try{
+  try{
 	int quantity=0;
 	 ResultSet rs;
 	Connector db = new Connector();
@@ -12,6 +12,7 @@
 	Cookie[] c =request.getCookies();
 	String logged="false";
     String email;
+
 // 	String product_name=request.getParameter("product_name");
 // 	ResultSet rs = st.executeQuery("select * from product_registration");
 // 	rs.next();
@@ -184,10 +185,10 @@ while(rs.next()){
     </div>
 </section>
 	<%
-//   }
-//   catch(Exception e){
-// 	  out.println(e);
-//   }
+  }
+  catch(Exception e){
+	  out.println(e);
+  }
 	%>
 </body>
 </html>

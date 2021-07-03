@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
             <%@ page import = "java.sql.*"%>
 <%@ page import = "Connector.Connector"%>
-<%
+<%try{
 Cookie[] c =request.getCookies();
 ResultSet rs;
 Connector db = new Connector();
@@ -106,3 +106,8 @@ out.println(overall_quantity);
 </form>
 </body>
 </html>
+<% 
+}catch(Exception e){
+	out.println(e);
+}
+%>

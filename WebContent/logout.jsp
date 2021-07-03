@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
+<%try{
 	Connector db = new Connector();
 	Connection con =Connector.conn();
 	Statement st = con.createStatement();
@@ -27,6 +27,9 @@
 //     	out.println("*******"+cookie.getValue());
 //     }
     response.sendRedirect("./index.jsp");
+}catch(Exception e){
+	out.println(e);
+}
 %>
 </body>
 </html>

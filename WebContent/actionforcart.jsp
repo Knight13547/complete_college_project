@@ -10,12 +10,25 @@
 </head>
 <body>
 <%
-// try{
+try{
 String function=request.getParameter("function");
 Connector db = new Connector();
 Connection con =Connector.conn();
 Statement st = con.createStatement();
 String product_name=request.getParameter("product_name");
+String buy;
+String type=request.getParameter("type");
+try{
+buy=request.getParameter("buy");
+if(buy.equals("yes")){
+	out.println(buy);
+	response.sendRedirect("./bill.jsp");
+}
+}
+catch (Exception e){
+buy="no";
+out.println(buy);
+}
 //  function = request.getParameter("function");
 // 	Boolean checker= st.execute("select product_name from cart where product_name = '"+product_name+"'");
 	if(function.equals("new")){
@@ -41,7 +54,10 @@ String product_name=request.getParameter("product_name");
 			int product_price=Integer.parseInt(rs.getString("product_price"));
 // 			out.println("checker");
 			st.execute("insert into cart (email,product_name,price,quantity,total_price) values ('"+email+"','"+product_name+"',"+product_price+",1,"+product_price+");");
-			response.sendRedirect("./cart.jsp");
+			if(type.equals("index")){
+				response.sendRedirect("./index.jsp");
+			}
+			response.sendRedirect("./product-gallery.jsp?type="+type+"");
 	 	}
 	}	
 
@@ -79,10 +95,10 @@ else if(function.equals("dec")){
 	}
 }
 	out.println("hii");
-// }
-// catch(Exception e){
-// 	out.println(e);
-// }
+}
+catch(Exception e){
+	out.println(e);
+}
 %>
 </body>
 </html>

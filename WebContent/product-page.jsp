@@ -115,7 +115,7 @@ out.println(overall_quantity);
                 </p>
                 <div style="display: flex; flex-direction: row; column-gap: 30px;">
 
-                    <button class="add-to-bag">BUY</button>
+                                        <a href="./actionforcart.jsp?product_name=<%=rs.getString("product_name")%>&function=new&buy=yes"><button class="add-to-bag">BUY</button></a>
                     <a href="./actionforcart.jsp?product_name=<%=rs.getString("product_name")%>&function=new"><button class="add-to-bag">ADD TO BASKET</button></a>
                 </div>
                 <hr style="margin: 5% auto;">

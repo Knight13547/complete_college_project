@@ -3,7 +3,7 @@
     
         <%@ page import = "java.sql.*"%>
 <%@ page import = "Connector.Connector"%>
-    <%
+    <%try{
 	Cookie c[]=request.getCookies();
 	 ResultSet rs;
 	Connector db = new Connector();
@@ -113,5 +113,10 @@ out.println(overall_quantity);
     <a href="#" style="margin: 3% 0% 0% 0%;">Already have an product? Need Modifying</a>
     <a href="./login.jsp" class="bt1" style="background-color:#788402;color:white; border:1px solid gray; text-align: center; display:flex; align-items: center;justify-content: center;"> Redirect To Your Product</a>
 </form>
+<%
+    }catch(Exception e){
+    	out.println(e);
+    }
+%>
 </body>
 </html>
