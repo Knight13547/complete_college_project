@@ -63,7 +63,7 @@
                 }
 					catch(Exception e){%>
 					
-						<li><a href="./actionforlogin.jsp">Login</a></li>
+						<li><a href="./login.jsp">Login</a></li>
 					<%} %>
                 
                

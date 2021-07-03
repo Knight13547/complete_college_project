@@ -59,7 +59,7 @@
                 }
 					catch(Exception e){%>
 					
-						<li><a href="./actionforlogin.jsp">Login</a></li>
+						<li><a href="./login.jsp">Login</a></li>
 					<%} %>
                 <li><a href="./product-gallery.jsp?type=12">Marketplace</a></li>
                 <li><a href="#">About Us</a></li>

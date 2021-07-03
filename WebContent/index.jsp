@@ -40,17 +40,21 @@
             <ul>
                 <%
 					try{
-						logged=c[0].getValue();
-                		if(logged.equals("true") || c[0].getValue()!=null){
+						logged=c[1].getValue();
+// 						out.println(logged);
+                		if(logged.equals("true")){
                 %>
                 <li><a href="./logout.jsp">
                 Logout</a></li>
                 <%
                 }
+                else if(logged.equals("false")||logged.equals(null)){
+                	out.println(" <li><a href='./logout.jsp'>Login</a></li>");
+                	}
                 }
 					catch(Exception e){%>
 					
-						<li><a href="./actionforlogin.jsp">Login</a></li>
+						<li><a href="./login.jsp">Login</a></li>
 					<%} %>
                 
                

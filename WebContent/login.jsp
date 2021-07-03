@@ -85,16 +85,24 @@ out.println(overall_quantity);
        
     </ul>
 </section>
+
 <form class="ls2" action = "actionforlogin.jsp">
-    <p style="font-size:x-large;">Login to your Account</p>
-    <%
-    String message=request.getParameter("message");
-    if(message!=null||message=="Invalid"){
-    out.println( message +" Username or Password Please Enter valid credentials");
+<%
+    String message;
+    try{
+    message=request.getParameter("message");
+    if(message.equals("Invalid")){
+    	
+//     	out.println(message);
+    out.println("<p style='color:red; margin:0'>" +message +" Username or Password Please Enter valid credentials<p>");
     }
-    else{
+    else{ 
+    }
+    }catch(Exception e){
+    	
     }
     %>
+    <p style="font-size:x-large;">Login to your Account</p>
      <input type="email" name="email" style="width: 99%;border-radius: 5px;height: 40px;font-size: large;outline: none;border:1px solid gray; " placeholder="Email" value=<% %>>
     <input type="password" name="pass" style="width: 99%;border-radius: 5px;height: 40px;font-size: large;outline: none;border:1px solid gray; " placeholder="Password">
     <input type="submit" value="Login" class="bt1" style="height: 45px;"> 
