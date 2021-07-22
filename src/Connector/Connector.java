@@ -15,7 +15,7 @@ return con;
 	}
 }
 
-//
+
 //package Connector;
 //import java.sql.*;
 //public class Connector {
@@ -26,8 +26,8 @@ return con;
 //Class.forName("com.mysql.jdbc.Driver");
 //con = DriverManager.getConnection(url,"root","");
 //Statement st =con.createStatement();
-//st.execute("CREATE DATABASE farm");
-//url="jdbc:mysql://localhost:3306/farm";
+//st.execute("CREATE DATABASE farmzon");
+//url="jdbc:mysql://localhost:3306/farmzon";
 //con = DriverManager.getConnection(url,"root","");
 //st =con.createStatement();
 //st.execute("CREATE TABLE cart (email varchar(50),product_name varchar(40),price int,quantity int,total_price int);");

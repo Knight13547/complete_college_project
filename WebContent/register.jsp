@@ -15,7 +15,8 @@ Statement st = con.createStatement();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <title>Farmzon</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
@@ -97,6 +98,17 @@ out.println(overall_quantity);
     <a href="#" style="margin: 3% 0% 0% 0%;">Already have an account?</a>
     <a href="./login.jsp" class="bt1" style="background-color:#788402;color:white; border:1px solid gray; text-align: center; display:flex; align-items: center;justify-content: center;"> Login</a>
 </form>
+<br>
+<br>
+<footer>
+    <p>Have a complaint? report it by <a href="mailto:pratikra2001@gmail.com" style=" color: white;">mail</a> or call us at +911234567890. Want to know <a href="./aboutus.jsp" style="color: white;">about us ?</a></p>
+    <div class="f13">
+        <a href="" class="facebook"></a>
+        <a href="" class="twitter"></a>
+        <a href="" class="inst"></a>
+    </div>
+    
+</footer>
 </body>
-<%}catch(Exception e){out.println(e);}%>
+<%con.close();}catch(Exception e){out.println(e);}%>
 </html>

@@ -15,6 +15,14 @@ String product_price = null;
 String product_details = null;
 String product_type = null;
 String image_name=null;
+String email=null;
+String submit=null;
+String image=null;
+try{
+image=request.getParameter("image_name");
+}catch(Exception e){
+	out.println(e);
+}
 %>
 <%
    File file ;
@@ -56,12 +64,12 @@ String image_name=null;
          while ( i.hasNext () ) {
             FileItem fi = (FileItem)i.next();
             if ( !fi.isFormField () ) {
+            	try{
                // Get the uploaded file parameters
                String fieldName = fi.getFieldName();
                String fileName = fi.getName();
                boolean isInMemory = fi.isInMemory();
                long sizeInBytes = fi.getSize();
-            
                // Write the file
                if( fileName.lastIndexOf("\\") >= 0 ) {
                   file = new File( filePath + 
@@ -69,9 +77,11 @@ String image_name=null;
                } else {
                   file = new File( filePath + 
                   fileName.substring(fileName.lastIndexOf("\\")+1)) ;
+//                out.println(fileName+"-----------------");
                }
                image_name=fileName;
                fi.write( file ) ;
+            	}catch(Exception e){image_name=image;}
 //                out.println("Uploaded Filename: " + filePath + 
 //                fileName + "<br>");
             }
@@ -88,8 +98,17 @@ String image_name=null;
                 }
                 else if (fieldname.equals("product_type")) {
                 	 product_type= fieldvalue;
-                	 response.sendRedirect("./index.jsp");
+//                 	 out.println(product_type+"++++++++++++++++++++");
+                }else if (fieldname.equals("email")){
+                	 email= fieldvalue;
+                	
+//                 	 response.sendRedirect("./admin.jsp");
+// 						submit=request.getParameter("submit");
                 }
+                else if (fieldname.equals("submit")){
+               	 submit= fieldvalue;
+//                	 out.println(submit+"**************");
+               }
                 
             	
             }
@@ -115,9 +134,8 @@ String image_name=null;
 try{
 	Connector db = new Connector();
 Connection con =Connector.conn();
+if(submit.equals("insert")){
 PreparedStatement ps =con.prepareStatement("insert into product_registration values(?,?,?,?,?,?,?)");
-Cookie[] c =request.getCookies();
-String email =c[2].getValue();
 out.println();
 ps.setString(1,email); 
 ps.setString(2,product_name);  
@@ -127,8 +145,31 @@ ps.setString(5,product_type);
 ps.setString(6,image_name);
 ps.setString(7,"12");
 ps.executeUpdate();
+response.sendRedirect("./admin.jsp");
 con.close();
-response.sendRedirect("product-registration.jsp");}
+}
+else if(submit.equals("update")){
+	PreparedStatement ps =con.prepareStatement("update product_registration set email=?,product_name=? , product_price=? , product_details=? , product_type=? , image_name=? where product_name='"+product_name+"'");
+	out.println();
+	ps.setString(1,email); 
+	ps.setString(2,product_name);  
+	ps.setString(3,product_price);  
+	ps.setString(4,product_details);  
+	ps.setString(5,product_type);  
+	ps.setString(6,image_name);
+	ps.executeUpdate();
+	out.println("updated");
+	response.sendRedirect("./admin.jsp");
+	con.close();
+	}
+else if(submit.equals("delete")){
+	PreparedStatement ps =con.prepareStatement("delete from product_registration where product_name='"+product_name+"'");
+	ps.executeUpdate();
+	out.println("deleted");
+	response.sendRedirect("./admin.jsp");
+	con.close();
+	}
+}
 catch(Exception e){
 	out.println(e);
 }

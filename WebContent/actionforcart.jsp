@@ -95,7 +95,7 @@ else if(function.equals("dec")){
 	}
 }
 	out.println("hii");
-}
+con.close();}
 catch(Exception e){
 	out.println(e);
 }

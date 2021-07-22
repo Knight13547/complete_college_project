@@ -36,7 +36,7 @@ rs = st.executeQuery(sql);
 		 RequestDispatcher rd = request.getRequestDispatcher("login.jsp?message=Invalid");
 		 rd.include(request, response);
 	 }
-}
+	 con.close();}
 catch(Exception e){
 	out.println(e);
 }

@@ -30,7 +30,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <title>Farmzon</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body id="ls1">
@@ -162,12 +163,25 @@ if(logged.equals("true") || c[0].getValue()!=null){%>
 }catch(Exception e){
 	out.println	("jiii");
 }   
-}
+con.close();}
    	catch(Exception e){
    	out.println(e);	
    	}
    	
 
 %>
+
+    <br>
+    <br>
+    <br>
+    <footer style="font-size: medium;position: absolute;left: 0;width: 100%;margin-top: 30px;">
+        <p>Have a complaint? report it by <a href="mailto:pratikra2001@gmail.com" style=" color: white;">mail</a> or call us at +911234567890. Want to know <a href="./aboutus.jsp" style="color: white;">about us ?</a></p>
+        <div class="f13">
+            <a href="" class="facebook"></a>
+            <a href="" class="twitter"></a>
+            <a href="" class="inst"></a>
+        </div>
+        
+    </footer>
 </body>
 </html>

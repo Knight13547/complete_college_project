@@ -27,7 +27,7 @@
 //     	out.println("*******"+cookie.getValue());
 //     }
     response.sendRedirect("./index.jsp");
-}catch(Exception e){
+    con.close();}catch(Exception e){
 	out.println(e);
 }
 %>

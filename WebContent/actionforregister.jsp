@@ -27,7 +27,8 @@ ps.setString(3,email);
 ps.setString(4,address);  
 ps.setString(5,pass);
 ps.executeUpdate();
-}
+con.close();
+response.sendRedirect("login.jsp");}
 catch(Exception e){
 	out.println(e);
 }

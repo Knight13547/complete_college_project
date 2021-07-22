@@ -3,7 +3,7 @@
         <%@ page import = "java.sql.*"%>
 <%@ page import = "Connector.Connector"%>
     <%
-    try{
+//     try{
     Cookie[] c =request.getCookies();
     String logged="false";
     String email;
@@ -18,7 +18,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <title>Farmzon</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body id="ls1">
@@ -26,7 +27,7 @@
     <header>
         <div class="left_header">
             <a href="./index.jsp"><div class="img1"></div></a>
-            <form action="./actionforsearch.jsp">
+            <form >
             <input type="text" name="search" id="" list="search" placeholder="      Search for product">
             <datalist id ="search"><% 
             ResultSet rs2 = st.executeQuery("select * from product_registration");
@@ -60,6 +61,16 @@
                
                 <li><a href='./product-gallery.jsp?type=12'>Marketplace</a></li>
                 <li><a href="./product-registration.jsp">Be a Merchant</a></li>
+                	<%try{
+			email=c[2].getValue();
+			rs= st.executeQuery("select * from registration where email='"+email+"'");
+			rs.next();
+		 String fname=rs.getString("fname");
+		 if(fname.equals("admin")){%>
+			 <li><a href="./admin.jsp">Admin</a></li> 
+		 <%}
+   }
+		catch(Exception e){}%>
                <li><a href="./cart.jsp">
                    <div class="basket">
                        <div style="display: flex;">
@@ -89,7 +100,7 @@ out.println(overall_quantity);
 </header>
 <section class="category" id="ls2">
     <ul>
-        <li> <a href="./product-gallery.jsp?type=crops">Crops</a> 
+        <li> <a href="./product-gallery.jsp?type=Seeds">Seeds</a> 
         </li>
         <li>
            <a href="./product-gallery.jsp?type=fertilizers">Fertilizers</a> 
@@ -130,7 +141,7 @@ out.println(overall_quantity);
     <div class="last-second-right">
     </div>
 </div>
-<div style="background-color: white;">
+<div style="background-color: #eae7e0;">
     <section class="s5">
         <div class="our-product">
             <h1 style="display:inline;">Our Products <br>
@@ -141,7 +152,7 @@ out.println(overall_quantity);
             <a>
                 <div class="product-card" style="height:120px">
                     <div class="product-image" style="background-image: url('./images/8.jpg');"></div>
-                    <p>Crops</p>
+                    <p>Seeds</p>
                 </div>
             </a>
             <a>
@@ -186,7 +197,7 @@ while (rs.next()){
             <div class="product_card">
                 <div style="width:93%; margin:auto;">
                     <a href="./product-page.jsp?product_name=<%=rs.getString("product_name")%>" style="width: 100%; height: 100%; display: block;text-decoration: none;color: black;">
-                        <div style="background-image: url('./images/<%=rs.getString("image_name")%>'); height:130px;"class="image"></div>
+                        <div style="background-image: url('./images/product_images/<%=rs.getString("image_name")%>'); height:130px;"class="image"></div>
                         <div class="product_details">
                             
                             <p class="name"><%=rs.getString("product_name")%></p>
@@ -200,7 +211,7 @@ while (rs.next()){
 
 </div>
 <div style="width: 100%;display: block;"onclick= "view()">
-    <button  style="margin:  2% 43%;width: 230px; height: 45px; background-color: white; border-radius: 5px;border:1px solid black;font-size: larger;" >View More</button>
+    <button  style="margin:  2% 43%;width: 150px; height: 40px; background-color: white; border-radius: 5px;border:1px solid black;font-size: larger;" >View More</button>
 </div>
 </div>
 </section>
@@ -220,34 +231,43 @@ while (rs.next()){
         }
     }
 </script>
-<div style="background-color: white;">
+<div style="background-color: #eae7e0;">
     <section class="s4">
-        <div style="width: 100%;"><h1 style="font-size: x-large;margin-top:0">Shop By Crops<br>
+        <div style="width: 100%;"><h1 style="font-size: x-large;margin-top:0">Shop By Seeds<br>
     <hr class="op-hr" style="width:90px">
     </h1></div>
     <section class="catagory_gallery">
     <% 
-        sql = "select * from product_registration where product_type='crops'";
+        sql = "select * from product_registration where product_type='Seeds'";
 		rs = st.executeQuery(sql);
 		while(rs.next()){
 %>
 		<a href="./product-page.jsp?product_name=<%=rs.getString("product_name")%>">
         <div class="catagory_card">
-            <div style="background-image: url('./images/<%=rs.getString("image_name")%>');height: 80px;" class="image"></div>
+            <div style="background-image: url('./images/product_images/<%=rs.getString("image_name")%>');height: 80px;" class="image"></div>
             <p><a href="./product-gallery.jsp"><%=rs.getString("product_name")%></a></p>
         </div>
         </a>
               <%} %>
     </section>
     <%
-}
+    con.close();}
 catch(Exception e){
 	out.println(e);
 }
-    }catch(Exception e){
-    	out.println(e);
-    }
+//     }catch(Exception e){
+//     	out.println(e);
+//     }
 %>
 </div>
+<footer style="margin-top: 0;">
+    <p>Have a complaint? report it by <a href="mailto:pratikra2001@gmail.com" style=" color: white;">mail</a> or call us at +911234567890. Want to know <a href="./aboutus.jsp" style="color: white;">about us ?</a></p>
+    <div class="f13">
+        <a href="" class="facebook"></a>
+        <a href="" class="twitter"></a>
+        <a href="" class="inst"></a>
+    </div>
+    
+</footer>
 </body>
 </html>

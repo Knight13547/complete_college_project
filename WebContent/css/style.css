@@ -28,6 +28,7 @@ header{
     left: 0;
     width: 100%;
     top: 0;
+    z-index: 1;
 }
 .left_header{
     background-color: transparent;
@@ -49,6 +50,7 @@ header{
 }
 .left_header form{
 	    margin-left: 10px;
+        margin-bottom: 0;
 }
 .left_header input{
     /* margin: auto; */
@@ -145,30 +147,7 @@ background-color: #ffffff98;
     width: 580px;
 
 }
-.registration{
-    color: white;
-    background-color: #FEAA00;
-    border: 6px solid #ca8a0a;
-    padding: 15px 40px;
-    margin-right: 1%;
-    font-weight: bold;
-}
-.registration:hover{
-    background-color:#ca8a0a ;
-    border: 6px solid #FEAA00;
-}
-.registration1{
-    color: white;
-    background-color: #788402;
-    border: 6px solid #596303;
-    padding: 15px 40px;
-    font-weight: bold;
-}
-.registration1:hover{
 
-    background-color:#596303;;
-    border: 6px solid #788402;
-}
 .last-second{
 display: flex;
 flex-direction: row;
@@ -197,12 +176,12 @@ height: 326px;
  }
  .s5{
     margin: 0;
-    background-color: white;
+    background-color: #eae7e0;
     display: flex;
     justify-content: center;
 }
 .our-product{
-    width: 1110px;
+    width: 1163px;
     margin-top: 5%;
 }
 .op-hr{
@@ -221,7 +200,7 @@ height: 326px;
     flex-direction: row;
     flex-wrap: wrap;
     row-gap: 49px;
-    column-gap: 74px;
+    column-gap: 85px;
 }
 .product-card{
     width: 140px;
@@ -231,6 +210,7 @@ height: 326px;
     grid-template-rows: 80% 10%;
     box-shadow:  0 0 4px 0 gray;
     padding: 10px;
+    background-color: white;
 }
 .product-image{
     background-size: contain;
@@ -243,7 +223,7 @@ height: 326px;
     align-items: center;
 }
 .s3{
-    background-color: white;
+    background-color: #eae7e0;
     /* border: 2px solid green; */
     width: 1160px;
     height: 570px;
@@ -263,6 +243,7 @@ height: 326px;
     border-radius: 5px;
     width: 200px;
     height:260px;
+    background-color: white;
 }
 /* .mar{
     width:calc(100% - 10px);
@@ -300,17 +281,16 @@ height: 326px;
     flex-direction: row;
     list-style: none;
     margin: 0;
-    column-gap: 6%;
-    font-size: larger;
+    column-gap: 5%;
+    font-size: large;
     justify-content: center;
-    font-weight:bold;
 }
 .category ul li a{
     text-decoration: none;
     color:#342628;
 }
 .s4{
-    background-color: white;
+    background-color: #eae7e0;
     margin: auto;
     width: 100%;
     width: 1160px;
@@ -330,10 +310,6 @@ height: 326px;
     padding: 5px 4px;
     align-items: center;
 }
-.catagory_gallery::-webkit-scrollbar{
-    /* background-color: transparent; */
-    display: none;
-}
 .catagory_card{
     /* cursor: grab; */
     /* border: solid black; */
@@ -343,6 +319,7 @@ height: 326px;
     position:relative;
     border-radius: 5px;
     box-shadow: 0px 0px 4px 0 black;
+    background-color: white;
 }
 .catagory_card p{
     margin: 0;
@@ -590,7 +567,6 @@ height: 326px;
     border-radius: 20px;
     padding: 6px;
     width: 130px;
-    height: 49.818px;
 }
 .bill_page{
     /* border: 2px solid; */
@@ -646,4 +622,162 @@ padding: 0% 5%;
 .total_amount{
     font-size: xx-large;
     margin: auto;
+}
+.ls{
+    margin-top: 58px;
+    height: 400px;
+}
+.lsr {
+    background-image: url('../images/walling-XLqiL-rz4V8-unsplash.jpg');
+    background-size: cover;
+}
+.sec1{
+    margin-top: 50px;
+text-align: center;
+margin-bottom: 50px;
+}
+.sec1 h1{
+margin: 2% 15%;
+font-size: 61px;
+}
+.sec1 p{
+margin: 3% auto;
+font-size: 22px
+}
+.sec2{
+margin-bottom: 50px;
+height: auto;
+
+}
+.sec2 img{
+width: 100%;
+height: 100vh;
+background-image: url('../images/patrick-amoy-6DfEbkqsTiA-unsplash.jpg');
+background-position: center;
+background-size: cover;
+
+/* background-size: cover; */
+}
+.img_overlay{
+
+background-color: white;
+margin: auto;
+margin-top: -17%;
+padding: 3%;
+position: relative;
+width: 860px;
+}
+.img_overlay h1{
+margin: 0%;
+text-align: center;
+font-size: 50px;
+font-weight: 10px;
+}
+.img_overlay p{
+text-align: left;
+font-size: 24px;
+font-weight: 10px;
+word-spacing: 0.5px;
+}
+.img_overlay button{
+display: block;
+margin: left;
+background-color: transparent;
+border: 2px solid #273c48;
+padding: 2% 4%;
+}
+.img_overlay button:hover{
+background-color: #342628;
+color: white;
+}
+footer{
+    margin-top: 30px;
+background-color: #342628;
+color: white;
+display: grid;
+grid-template-columns: 1fr 1fr;
+
+}
+footer p{
+display: inline-block;
+}
+.f13{
+display: flex;
+flex-direction: row;
+column-gap: 10px;
+height: 10%;
+margin-left: auto;
+margin-right:10%;
+}
+.f13 img{
+height: 40px;
+width: 40px;
+border: 1px solid black;
+/* padding: 10%; */
+}
+.f13 a{
+background-color: white;
+border-radius: 100%;
+margin-top: 5px;
+}
+.facebook{
+background-image:url("../images/59d54d920116ac0001969f0c_facebook.png");
+height: 40px;
+width: 40px;
+background-repeat: no-repeat;
+background-size: 11px;
+background-position:50% 50%;
+border: 1px solid black;
+
+border-right: none;
+}
+.twitter{
+background-image:url("../images/59d54d90965779000179d122_twitter.png");
+height: 40px;
+width: 40px;
+background-repeat: no-repeat;
+background-size: 21px;
+background-position:50% 50%;
+border: 1px solid black;
+border-right: none;
+}
+
+.inst{
+background-image:url("../images/59d54d917ed19800019cf004_insta.png");
+height: 40px;
+width: 40px;
+background-repeat: no-repeat;
+background-size: 17px;
+background-position:50% 50%;
+border: 1px solid black;
+}
+.facebook:hover{
+background-color: #788402;
+background-image:url("../images/facebook-64.png");
+background-repeat: no-repeat;
+background-size: 21px;
+background-position:center;
+/* color: white; */
+/* filter: grayscale(1.9) invert(1); */
+
+}
+.twitter:hover{
+background-color: #788402;
+background-image:url("../images/twitter-64.png");
+background-repeat: no-repeat;
+background-size: 18px;
+background-position:center;
+/* color: white; */
+/* filter: grayscale(1.9) invert(1); */
+
+}
+.inst:hover{
+background-color: #788402;
+background-image:url("../images/toppng.com-https-www-instagram-comovermountaincycles-new-instagram-icon-white-351x351.png");
+background-repeat: no-repeat;
+background-size: 17px;
+background-position:center;
+/* color: white; */
+/* filter: grayscale(1.9) invert(1); */
+
 }

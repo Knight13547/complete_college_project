@@ -16,7 +16,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <title>Farmzon</title>
     <link rel="stylesheet" href="./css/style.css">
     <style >input,select{
     width: 99%;
@@ -103,7 +104,7 @@ out.println(overall_quantity);
     <input type="file" name="file"  placeholder=" ENTER PRODUCT IMAGE ">
     <label for="product-type"  style="width:99% ;font-size:x-large; display:flex; column-gap:15px;"> Product type :
      <select id="product-type" name="product_type"style="width:58%;">
-    <option value=crops> Crops</option>
+    <option value=seeds> Seeds</option>
     <option value=fertilizers> Fertilizers</option>
     <option value=pesticides> Pesticides</option>
     <option value=equipments> Equipments</option>
@@ -113,10 +114,21 @@ out.println(overall_quantity);
     <a href="#" style="margin: 3% 0% 0% 0%;">Already have an product? Need Modifying</a>
     <a href="./login.jsp" class="bt1" style="background-color:#788402;color:white; border:1px solid gray; text-align: center; display:flex; align-items: center;justify-content: center;"> Redirect To Your Product</a>
 </form>
-<%
+<%con.close();
     }catch(Exception e){
     	out.println(e);
     }
 %>
+<br>
+<br>
+<footer>
+    <p>Have a complaint? report it by <a href="mailto:pratikra2001@gmail.com" style=" color: white;">mail</a> or call us at +911234567890. Want to know <a href="./aboutus.jsp" style="color: white;">about us ?</a></p>
+    <div class="f13">
+        <a href="" class="facebook"></a>
+        <a href="" class="twitter"></a>
+        <a href="" class="inst"></a>
+    </div>
+    
+</footer>
 </body>
 </html>
